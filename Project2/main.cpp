@@ -17,8 +17,8 @@
 class Point
 {
 public:
-	int x;
-	int y;
+	int x = 0;
+	int y = 0;
 };
 
 int main()
@@ -27,11 +27,9 @@ int main()
 
 	std::vector<Point> point;
 
-	int cor = 3;
-
 	std::cout << "Ввести кординаты X - Y:" << std::endl;
 
-	for (; cor > 0; --cor)
+	for (int i = 0; i < 3; ++i)
 	{
 		Point zapPoint;
 		std::cin >> zapPoint.x;
@@ -47,19 +45,18 @@ int main()
 
 	std::cout << "Находим точку У которая находится выше всех." << std::endl;
 
-	int maxX = 0;
-	int maxY = 0;
+	Point pointMinMax;
 
 	for (int i = 0; i < point.size(); i++)
 	{
-		if (point[i].y > maxY && point[i].x > 0)
+		if (point[i].y > pointMinMax.y)
 		{
-			maxY = point[i].y;
-			maxX = point[i].x;
+			pointMinMax.y = point[i].y;
+			pointMinMax.x = point[i].x;
 		}
 	}
 
-	std::cout << "Выще всех точка кординат по оси Y - : " << "Кордината X: " << maxX << " Кордината Y: " << maxY << std::endl;
+	std::cout << "Выще всех точка кординат по оси Y - : " << "Кордината X: " << pointMinMax.x << " Кордината Y: " << pointMinMax.y << std::endl;
 
 	return 0;
 }
