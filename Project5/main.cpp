@@ -46,7 +46,13 @@ int main()
 
 	for (int i = 0; i < point.size(); i++)
 	{
-		std::cout << "Кордината X: " << point[i].x + 1 << " Кордината Y: " << point[i].y << std::endl;
+		point[i].x += 1;
+	}
+
+
+	for (int i = 0; i < point.size(); i++)
+	{
+		std::cout << "Кордината X: " << point[i].x << " Кордината Y: " << point[i].y << std::endl;
 	}
 
 	return 0;
